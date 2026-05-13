@@ -100,9 +100,33 @@ span.psw {
 }
 </style>
 </head>
+
+	<script>
+  document.getElementById('loginform').onsubmit = function(event) {
+    event.preventDefault(); // Prevents the default form submission reload
+    
+    var un = document.loginform.usr.value;
+        var pw = document.loginform.pword.value;
+        var username = "admin"; 
+        var password = "admin123";
+        if ((un == username) && (pw == password)) {
+            return true;
+		// Redirect to the new page
+			window.location.href = "main.html";
+			 console.log("Form data processed!");
+         
+			
+		}
+			
+        else {
+            alert ("Login was unsuccessful, please check your username and password");
+            return false;
+        }
+  };
+</script>
+	
 <body>
 
-<body>
 
 <br><br><br><br>
 <form name="loginform" id="loginform">
