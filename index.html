@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<script>
+  document.getElementById('myForm').onsubmit = function(event) {
+    event.preventDefault(); // Prevents the default form submission reload
+    
+    // Perform your logic here (e.g., validation)
+    console.log("Form data processed!");
+
+    // Redirect to the new page
+    window.location.href = "main.html"; 
+  };
+</script><!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,7 +115,7 @@ span.psw {
 <body>
 
 <br><br><br><br>
-<form name="loginform" onSubmit="return validateForm();">
+<form name="loginform">
 
 
   <div class="form1">
@@ -124,16 +134,20 @@ span.psw {
   </div>	
 </form>
 
+
+
 <script>
-	 
-    function validateForm() {
-        var un = document.loginform.usr.value;
+  document.getElementById('loginform').onsubmit = function(event) {
+    event.preventDefault(); // Prevents the default form submission reload
+    
+    var un = document.loginform.usr.value;
         var pw = document.loginform.pword.value;
         var username = "admin"; 
         var password = "admin123";
         if ((un == username) && (pw == password)) {
             return true;
 		// Redirect to the new page
+			 console.log("Form data processed!");
         window.location.href = "main.html"; 
 			
 		}
@@ -142,7 +156,11 @@ span.psw {
             alert ("Login was unsuccessful, please check your username and password");
             return false;
         }
-  }
+  };
 </script>
+	
 </body>
 </HTML>
+
+
+  console.log("Form data processed!");
